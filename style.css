@@ -147,4 +147,17 @@ th,td{
 }
 th {
     background: rgba(255,255,255,0.1);
+
+}
+
+/* معالجة مشكلة الحقول في الموبايل */
+@media (max-width: 600px) {
+    .price {
+        flex-direction: column; /* خليهم تحت بعض */
+        align-items: stretch;   /* ياخدوا العرض بالكامل */
+    }
+
+    .price input {
+        width: 100%; /* كل حقل ياخد العرض كله */
+    }
 }
