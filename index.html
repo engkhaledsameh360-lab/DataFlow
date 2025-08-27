@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFlow</title>
+    <!-- ملف CSS الخارجي -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="crud">
+
+        <!-- العنوان والوصف -->
+        <div class="head">
+            <h2>DataFlow</h2>
+            <p>A Simple Data Management System Based on CRUD – Designed by Khaled Sameh</p>
+        </div>
+
+        <!-- إدخال البيانات -->
+        <div class="input">
+            <input type="text" placeholder="Title" id="title"> <!-- خانة إدخال اسم المنتج -->
+
+            <div class="price">
+                <input onkeyup='getTotal()' type="number" placeholder="Price" id="price"> <!-- إدخال السعر -->
+                <input onkeyup='getTotal()' type="number" placeholder="Taxes" id="taxes"> <!-- إدخال الضريبة -->
+                <input onkeyup='getTotal()' type="number" placeholder="Service" id="service"> <!-- إدخال قيمة الخدمة -->
+                <input onkeyup='getTotal()' type="number" placeholder="Discount" id="discount"> <!-- إدخال الخصم -->
+                <small id="total">0</small> <!-- عرض الإجمالي المحسوب -->
+            </div>
+
+            <input type="number" placeholder="Count" id="count"> <!-- إدخال الكمية -->
+            <input type="text" placeholder="Category" id="category"> <!-- إدخال فئة المنتج -->
+            <button id="submit">Create</button> <!-- زر إنشاء أو تعديل المنتج -->
+        </div>
+
+        <!-- عرض البيانات -->
+        <div class="output">
+            <div class="search">
+                <input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="Search"> <!-- حقل البحث -->
+            </div>
+
+            <div class="buttonsearch">
+                <button onclick="getSearchMood(this.id)" id="searchtitle">Search By Title</button> <!-- زر البحث بالعنوان -->
+                <button onclick="getSearchMood(this.id)" id="searchcategory">Search By Category</button> <!-- زر البحث بالفئة -->
+            </div>
+
+            <div id="deleteAll">
+                <!-- هنا يظهر زر "Delete All" ديناميكياً من خلال الجافاسكربت -->
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th> <!-- رقم تسلسلي -->
+                        <th>Title</th> <!-- اسم المنتج -->
+                        <th>Price</th> <!-- السعر -->
+                        <th>Taxes</th> <!-- الضريبة -->
+                        <th>Service</th> <!-- الخدمة -->
+                        <th>Discount</th> <!-- الخصم -->
+                        <th>Total</th> <!-- الإجمالي -->
+                        <th>Category</th> <!-- الفئة -->
+                        <th>Update</th> <!-- زر تعديل -->
+                        <th>Delete</th> <!-- زر حذف -->
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- هنا الجافاسكربت هيولّد البيانات -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ربط ملف الجافاسكربت -->
+    <script src="main.js"></script>
+</body>
+
+</html>
